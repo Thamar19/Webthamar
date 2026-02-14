@@ -1,0 +1,517 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Para mi Amor ❤️ - Parte 1</title>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;700&display=swap" rel="stylesheet">
+
+    <style>
+        body {
+            font-family: 'Nunito', sans-serif;
+            background: linear-gradient(135deg, #ffe6e6 0%, #ffc1e3 100%);
+            margin: 0;
+            padding: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            color: #5a5a5a;
+            overflow-x: hidden;
+        }
+
+        .container {
+            background: rgba(255, 255, 255, 0.95);
+            padding: 2.5rem;
+            border-radius: 30px;
+            box-shadow: 0 20px 40px rgba(233, 30, 99, 0.15);
+            width: 90%;
+            max-width: 550px;
+            text-align: center;
+            position: relative;
+            z-index: 10;
+        }
+
+        h1, h2, h3 { color: #e91e63; font-weight: 700; }
+        input { width: 85%; padding: 15px; margin: 12px 0; border: 2px solid #ffd1e8; border-radius: 15px; outline: none; }
+        button { background: linear-gradient(45deg, #e91e63, #ff6090); color: white; border: none; padding: 14px 30px; border-radius: 50px; cursor: pointer; font-weight: bold; margin-top: 10px; transition: 0.3s; }
+        button:hover { box-shadow: 0 4px 15px rgba(233, 30, 99, 0.4); transform: translateY(-2px); }
+        
+        #main-content { display: none; }
+        .inner-card { background: #fffcfd; padding: 25px; border-radius: 20px; margin-bottom: 25px; border: 1px solid #ffebf2; }
+        #letter-text { display: none; font-style: italic; color: #666; text-align: left; line-height: 1.6; padding: 15px; border-left: 4px solid #ff6090; }
+        
+        .fotos { display: grid; grid-template-columns: repeat(auto-fit, minmax(100px, 1fr)); gap: 10px; }
+        .fotos img { width: 100%; height: 100px; object-fit: cover; border-radius: 10px; }
+        
+        .timeline { text-align: left; border-left: 2px dashed #ff85b3; padding-left: 20px; margin-left: 10px; }
+        .event { margin-bottom: 20px; position: relative; }
+        .event::before { content: '💝'; position: absolute; left: -31px; background: white; }
+        
+        /* Pequeño efecto de explosión solo al hacer clic en la carta o entrar */
+        .particle { position: fixed; pointer-events: none; z-index: 100; }
+
+        /* Botón gigante para ir a la sorpresa 2 */
+        .btn-next-surprise {
+            width: 100%;
+            font-size: 1.2rem;
+            padding: 20px;
+            background: linear-gradient(45deg, #ff0055, #ff6090);
+            box-shadow: 0 10px 20px rgba(255, 0, 85, 0.3);
+            animation: pulse 2s infinite;
+            margin-top: 20px;
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+            100% { transform: scale(1); }
+        }
+    </style>
+</head>
+<body>
+
+    <div id="login-screen" class="container">
+        <h1>Bienvenida mi Amor ❤️</h1>
+        <p>Contesta para entrar a tu sorpresa:</p>
+        <input type="text" id="name" placeholder="Escribe tu nombre">
+        <input type="text" id="place" placeholder="¿Dónde nos vimos por primera vez?">
+        <input type="number" id="date-number" placeholder="¿Qué número es nuestra fecha?">
+        <input type="text" id="color" placeholder="Escribe tu color favorito">
+        <br><br>
+        <button onclick="checkLogin()">Entrar</button>
+        <p id="error-msg" style="color: #d32f2f; display: none; margin-top: 15px;">Ups, algo no cuadra mi vida :(</p>
+    </div>
+
+    <div id="main-content">
+        <div class="container" id="main-card-container">
+            
+            <h1>¡Happy Valentine's Day! 💖</h1>
+            
+            <div class="inner-card">
+                <h2>💌 Una carta para ti</h2>
+                <img src="https://cdn-icons-png.flaticon.com/512/3062/3062634.png" width="80" onclick="toggleLetter(event)" style="cursor:pointer;">
+                <br>
+                <button onclick="toggleLetter(event)">Abrir Carta</button>
+                <div id="letter-text">
+            <p>Mi amor,</p>
+
+
+
+
+
+
+
+                    <p>Desde que llegaste a mi vida, algo dentro de mí cambió para siempre.
+
+
+
+
+
+
+
+Sin darme cuenta, empezaste a convertir los días normales en momentos especiales,
+
+
+
+
+
+
+
+y lo simple en algo extraordinario.</p>
+
+
+
+
+
+
+
+                    <p>Tus abrazos se volvieron mi refugio favorito,
+
+
+
+
+
+
+
+tu voz mi tranquilidad en medio del caos,
+
+
+
+
+
+
+
+y tu sonrisa la razón por la que muchas veces sonrío sin explicación.</p>
+
+
+
+
+
+
+
+<p>Contigo aprendí que el amor no es solo decir “te amo”,
+
+
+
+
+
+
+
+sino demostrarlo en los pequeños detalles,
+
+
+
+
+
+
+
+en las conversaciones largas,
+
+
+
+
+
+
+
+en los silencios cómodos,
+
+
+
+
+
+
+
+en el apoyo incondicional y en la paciencia cuando las cosas no son perfectas.</p>
+
+
+
+
+
+
+
+<p>Cada día contigo es un nuevo capítulo de esta historia tan bonita que estamos escribiendo juntos.
+
+
+
+
+
+
+
+Una historia hecha de confianza, de sueños compartidos,
+
+
+
+
+
+
+
+de metas que queremos alcanzar de la mano
+
+
+
+
+
+
+
+y de promesas que nacen desde el corazón.</p>
+
+
+
+
+
+
+
+<p>Gracias por elegirme incluso en mis días difíciles.
+
+
+
+
+
+
+
+Gracias por entender mis miedos, por celebrar mis logros
+
+
+
+
+
+
+
+y por recordarme lo valiosa que soy.
+
+
+
+
+
+
+
+Gracias por ser mi compañero, mi mejor amigo
+
+
+
+
+
+
+
+y la persona con la que quiero seguir construyendo recuerdos.</p>
+
+
+
+
+
+
+
+<p>No eres solo mi novio…
+
+
+
+
+
+
+
+eres mi persona favorita,
+
+
+
+
+
+
+
+mi pensamiento constante,
+
+
+
+
+
+
+
+mi apoyo seguro y mi lugar feliz.</p>
+
+
+
+
+
+
+
+<p>Te amo más allá de lo que las palabras pueden expresar,
+
+
+
+
+
+
+
+más allá del tiempo, de la distancia y de cualquier obstáculo.
+
+
+
+
+
+
+
+Te amo en los días buenos y en los días no tan buenos.
+
+
+
+
+
+
+
+Te amo en lo sencillo y en lo extraordinario.</p>
+
+
+
+
+
+
+
+<p>Hoy en San Valentín quiero recordarte que eres un regalo en mi vida.
+
+
+
+
+
+
+
+Que mi corazón te eligió y te sigue eligiendo todos los días.
+
+
+
+
+
+
+
+Y que mientras exista un “nosotros”, siempre habrá amor creciendo entre los dos.</p>
+
+
+
+
+
+
+
+<p>Feliz San Valentín, mi amor.
+
+
+
+
+
+
+
+Siempre contigo, siempre para ti ❤️</p>
+
+
+
+                </div>
+            </div>
+
+            <h3>Nuestros Momentos 📸</h3>
+            <div class="inner-card">
+                <div class="fotos">
+                    <img src="./img01.jpg" alt="Nuestra foto"> 
+                    <img src="./img02.jpg" alt="Nuestra foto"> 
+                    <img src="./img03.jpeg" alt="Nuestra foto"> 
+                    <img src="./img04.jpeg">
+
+                    <img src="./img05.jpeg">
+
+                    <img src="./img06.jpeg">
+
+                    <img src="./img07.jpeg">
+
+                    <img src="./img08.jpeg">
+
+                    <img src="./img09.jpeg">
+
+                    <img src="./img10.jpeg">
+
+                    <img src="./img11.jpeg">
+
+                    <img src="./img12.jpeg">
+
+                    <img src="./img13.jpeg">
+
+                    <img src="./img14.jpeg">
+
+                    <img src="./img15.jpeg">
+
+                    <img src="./img16.jpeg">
+
+                    <img src="./img17.jpeg">
+
+                    <img src="./img18.jpeg">
+
+                    <img src="./img19.jpeg">
+
+                    <img src="./img20.jpeg">
+
+                </div></div>
+            <h3>Nuestra Historia ⏳</h3>
+            <div class="timeline">
+                  <div class="event">
+
+
+
+                    <strong>21 Sep 2023</strong> Empezamos nuestro camino juntos.
+
+
+
+                </div>
+
+
+
+                <div class="event">
+
+
+
+                    <strong>21 Sep 2024</strong> Primer año maravilloso a tu lado.
+
+
+
+                </div>
+
+
+
+                <div class="event">
+
+
+
+                    <strong>Hoy</strong> Te amo más que ayer y menos que mañana.
+
+
+
+                </div>
+            </div>
+
+            <div class="inner-card">
+                <h3>🎶 Nuestra Canción</h3>
+                <p>Dale play y piensa en mí</p>
+                <video controls width="100%" style="border-radius: 15px; box-shadow: 0 5px 15px rgba(0,0,0,0.1);">
+                    <source src="Reik - Pero Te Conocí.mp4" type="video/mp4">  
+                    Tu navegador no soporta el elemento de video.
+                </video>
+            </div>
+
+            <div class="inner-card">
+                <h3>💬 Escríbeme algo bonito</h3>
+                <textarea id="msg-input" style="width:90%; border-radius:15px; padding:10px; border: 2px solid #ffd1e8; outline: none;" placeholder="Tu mensaje..."></textarea>
+                <button onclick="sendWhatsapp()">Enviar a WhatsApp 💚</button>
+            </div>
+
+            <button class="btn-next-surprise" onclick="window.location.href='sorpresa2.html'">
+                ¡Aún hay más! Ir a tu siguiente sorpresa ✨
+            </button>
+
+        </div>
+    </div>
+
+    <script>
+        function checkLogin() {
+            const name = document.getElementById('name').value.toLowerCase().trim();
+            const place = document.getElementById('place').value.toLowerCase().trim();
+            const dateNumber = document.getElementById('date-number').value.trim();
+            const color = document.getElementById('color').value.toLowerCase().trim();
+
+            if (name.includes("ranniel") && place.includes("iglesia") && dateNumber == "21" && (color == "red" || color == "rojo")) {
+                document.getElementById('login-screen').style.display = 'none';
+                document.getElementById('main-content').style.display = 'block';
+                explodeHearts(window.innerWidth/2, window.innerHeight/2);
+            } else {
+                document.getElementById('error-msg').style.display = 'block';
+            }
+        }
+
+        function toggleLetter(event) {
+            const letter = document.getElementById('letter-text');
+            if (letter.style.display === 'none' || letter.style.display === '') {
+                explodeHearts(event.clientX || window.innerWidth/2, event.clientY || window.innerHeight/2);
+                letter.style.display = 'block';
+            } else {
+                letter.style.display = 'none';
+            }
+        }
+
+        /* Explosión momentánea de corazones al entrar o al abrir la carta */
+        function explodeHearts(x, y) {
+            for (let i = 0; i < 15; i++) {
+                const particle = document.createElement('div');
+                particle.classList.add('particle');
+                particle.innerHTML = '💖';
+                document.body.appendChild(particle);
+                const destX = (Math.random() - 0.5) * 400;
+                const destY = (Math.random() - 0.5) * 400;
+                particle.animate([
+                    { transform: `translate(${x}px, ${y}px) scale(1)`, opacity: 1 },
+                    { transform: `translate(${x + destX}px, ${y + destY}px) scale(0)`, opacity: 0 }
+                ], { duration: 1500, easing: 'ease-out' }).onfinish = () => particle.remove();
+            }
+        }
+
+        function sendWhatsapp() {
+            const msg = document.getElementById('msg-input').value;
+            const phoneNumber = "8297609147"; 
+            if(msg.trim()) window.open(`https://wa.me/${phoneNumber}?text=${encodeURIComponent(msg)}`, '_blank');
+        }
+    </script>
+</body>
+</html>
